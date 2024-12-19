@@ -31,6 +31,9 @@
 ### 📑 Recoil
 
 ## 4. 결과
-### 메인화면
-> 
 
+| 메인 화면 | 이미지 검색 | 
+|--|--|
+| ![image](https://github.com/Gunayeon/React-album/blob/main/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-19%20%EC%98%A4%ED%9B%84%203.46.38.png) | ![image](https://github.com/Gunayeon/React-album/blob/main/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-19%20%EC%98%A4%ED%9B%84%203.53.23.png) |
+| 페이지 라우터 | 북마크 페이지 |
+| ![image](https://github.com/Gunayeon/React-album/blob/main/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-19%20%EC%98%A4%ED%9B%84%203.54.26.png) | ![image](https://github.com/Gunayeon/React-album/blob/main/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-19%20%EC%98%A4%ED%9B%84%203.54.40.png)
