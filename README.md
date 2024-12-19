@@ -25,9 +25,9 @@
 > 6. TypeScript와 Node.js 모듈을 쓸 수 있도록 도와주는 환경 구축: `npm install @types/node` <br />
 > 7. React Toast Popup 모듈 설치: `npm install react-simple-toasts` <br />
 ### 📚 페이지 라우터
-### <mark>📌 Router 란?</mark>
+#### <mark>📌 Router 란?</mark>
 > React Router는 React 애플리케이션에서 <b>클라이언트 사이드 라우팅(Client-Side Routing)</b>을 구현하기 위한 라이브러리입니다. React는 기본적으로 단일 페이지 애플리케이션(SPA)으로 동작하며, React Router를 사용하면 URL에 따라 다른 컴포넌트나 페이지를 렌더링할 수 있습니다.
-### <mark>📌 Router 적용</mark>
+#### <mark>📌 Router 적용</mark>
 ® ```App.tsx```
 > <b>라우팅</b>과 <b>네비게이션</b>을 정의, 
 > 전체 앱의 라우팅을 설정
@@ -57,8 +57,9 @@
 > 1. ```App.tsx```에서 <b>라우팅</b>과 <b>네비게이션</b> 정의
 > 2. ```CommonNav.tsx```는 <b>URL에 따른 네비게이션 상태 업데이트</b> 및 <b>Recoil 상태 관리</b>
 > 3. 각 페이지는 ```Routes```를 통해 URL경로에 매핑되어 렌더링
-### 🧷 css
-
+### 🧷 Style
+#### <mark>📌 SCSS 적용</mark>
+> <b>SCSS(Sassy CSS)</b>는 CSS의 확장 버전으로, 더 효율적이고 유지보수하기 쉬운 스타일을 작성할 수 있게 해주는 CSS 전처리기 Sass의 문법입니다. 기존 CSS 문법을 그대로 사용하면서 추가적인 기능(<mark>변수, 중첩, 믹스인</mark> 등)을 제공합니다.
 ### 🔖 공통 컴포넌트
 
 ### 📌 useState
