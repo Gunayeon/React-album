@@ -45,7 +45,7 @@
 
 
 ## 3. 상세
-### ⚙️ 프로젝트 환경 설정
+### [⚙️ 프로젝트 환경 설정]
 > 1. 프로젝트 환경설정(vite를 활용한 React 프로젝트) 설치 : `npm install vite@latest` <br />
 > 2. React 중앙집중식 상태관리 라이브러리 Recoil 설치 : `yarn add recoil` <br />
 > 3. 외부 오픈 API 통신을 위한 라이브러리 axios 설치 : `npm install axios` <br />
@@ -53,7 +53,11 @@
 > 5. React Router 설치: `npm install react-router-dom localforage match-sorter sort-by` <br />
 > 6. TypeScript와 Node.js 모듈을 쓸 수 있도록 도와주는 환경 구축: `npm install @types/node` <br />
 > 7. React Toast Popup 모듈 설치: `npm install react-simple-toasts` <br />
-### 📚 페이지 라우터
+
+<br><br>
+
+
+### [📚 페이지 라우터]
 #### <mark>📌 Router 란?</mark>
 > React Router는 React 애플리케이션에서 <b>클라이언트 사이드 라우팅(Client-Side Routing)</b>을 구현하기 위한 라이브러리이다. React는 기본적으로 단일 페이지 애플리케이션(SPA)으로 동작하며, React Router를 사용하면 URL에 따라 다른 컴포넌트나 페이지를 렌더링이 가능하다.
 #### <mark>📌 Router 적용</mark>
@@ -86,10 +90,14 @@
 > 1. ```App.tsx```에서 <b>라우팅</b>과 <b>네비게이션</b> 정의
 > 2. ```CommonNav.tsx```는 <b>URL에 따른 네비게이션 상태 업데이트</b> 및 <b>Recoil 상태 관리</b>
 > 3. 각 페이지는 ```Routes```를 통해 URL경로에 매핑되어 렌더링
-### 🧷 Style
+
+<br><br>
+### [🧷 Style]
 #### <mark>📌 SCSS 적용</mark>
 > <b>SCSS(Sassy CSS)</b>는 CSS의 확장 버전으로, 더 효율적이고 유지보수하기 쉬운 스타일을 작성할 수 있게 해주는 CSS 전처리기 Sass의 문법입니다. 기존 CSS 문법을 그대로 사용하면서 추가적인 기능(<mark>변수, 중첩, 믹스인</mark> 등)을 제공
-### 🔖 공통 컴포넌트
+
+<br><br>
+### [🔖 공통 컴포넌트]
 #### <mark>📌 공통 컴포넌트 사용</mark>
 > 반복되는 UI 요소를 별도의 컴포넌트로 분리하여 구현하였다. 
 
@@ -97,7 +105,9 @@
 > `코드 간결화` : 전체 페이지는 컴포넌트를 호출하여 렌더링만 처리하고, 코드 양을 크게 줄이는 효과를 가짐<br><br>
 > `재사용성` : 공통 컴포넌트를 다양한 페이지나 상황에서 재활용 효과<br><br>
 > `유지보수성` : UI 변경 시 컴포넌트만 수정하면 모든 페이지에 반영되어 수정이 용이함.
-### 📌 useState
+
+<br><br>
+### [💿 useState]
 #### <mark>📌 UI 반복생성</mark>
 ® `useState` 로 동적 데이터 관리
 > `navigaion` 상태는 JSON 파일(`nav.json`)에서 읽어온 데이터를 기반으로 관리<br><br>
@@ -107,6 +117,8 @@
 > `navigaion.map()` 을 사용해 `Link`컴포넌트를 동적으로 생성하여 각 네비게이션 항목을 렌더링<br><br>
 > <b>CSS 클래스</b>는 `item.isActive`상태에 따라 동적으로 설정
 
+<br>
+
 #### <mark>📌 검색 기능</mark>
 ® 검색어 관리
 > `useState`를 사용하여 사용자가 입력한 검색어 `text`상태로 관리<br><br>
@@ -115,7 +127,8 @@
 ® Recoil 상태 업데이트
 >  검색 버튼 클릭 시 `searchState`와 `pageState`를 업데이트하여 검색 동작을 트리거함
 
-### 🔗 Open Api 통신
+<br><br>
+### [🔗 Open API 통신]
 #### <mark>📌 Unsplash API를 활용한 통신 및 데이터 호출</mark>
 ® Open API 사용
 > 이 프로젝트에서는 <b>Unsplash API</b>를 사용해서 사진 데이터를 불러옴<br><br>
@@ -149,7 +162,7 @@
 > 검색어 변경 또는 페이지 이동 시 API가 재호출되어 UI가 업데이트 됨
 
 
-
+<br><br>
 ### 📑 Recoil
 #### <mark>📌 Recoil 검색 기능</mark>
 ® 구조
@@ -161,6 +174,8 @@
 > `검색어 입력` : 사용자가 검색창에 입력한 검색어는 searchState에 저장되고, 입력값이 없을 경우 기본 검색어로 "Korea"가 설정<br><br>
 > `Recoil Selector로 API 호출` : `imageData` Selector는 `searchState`와 `pageState`를 기반으로 Unsplash API를 호출하고, API 호출 성공 시 데이터를 반환하고, 실패 시 에러를 처리<br><br>
 > `UI 업데이트` : `useRecoilValueLoadable`을 통해 API 호출 상태(loading, hasValue, hasError)를 관리하며, 데이터가 성공적으로 반환되면, 이를 기반으로 UI가 동적으로 렌더링
+
+<br>
 
 #### <mark>📌 Recoil 검색 기능</mark>
 ® 구조
