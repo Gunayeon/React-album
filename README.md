@@ -164,7 +164,7 @@
 
 
 <br><br>
-### 📑 Recoil
+### [📑 Recoil]
 #### <mark>📌 Recoil 검색 기능</mark>
 ® 구조
 > `searchstate` : 검색어를 전역적으로 관리하는 상태<br><br>
