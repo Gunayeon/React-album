@@ -116,8 +116,62 @@
 >  검색 버튼 클릭 시 `searchState`와 `pageState`를 업데이트하여 검색 동작을 트리거함
 
 ### 🔗 Open Api 통신
+#### <mark>📌 Unsplash API를 활용한 통신 및 데이터 호출</mark>
+® Open API 사용
+> 이 프로젝트에서는 <b>Unsplash API</b>를 사용해서 사진 데이터를 불러옴<br><br>
+> <b>검색어(query)</b>와 <b>페이지 번호(page)</b>를 파라미터로 전달하여 원하는 데이터를 가져온다.
+
+® Recoil Selector 활용
+> `searchState` : 검색어를 관리하는 상태<br><br>
+> `pageState` : 현재 페이지를 관리하는 상태<br><br>
+> Recoil의 `selector`를 통해 검색어와 페이지 번호에 따라 API를 호출
+
+® API 호출
+> <b>URL : </b>`http://api.unsplash.com/search/photos` <br><br>
+> <b>주요 파라미터 : </b>
+> - `query` : 검색어
+> - `page` : 현재 페이지 번호
+> - `per_page` : 한 페이지당 가져올 데이터 개수
+> - `client_id` : API 인증 키
+>
+> 응답 데이터: 사진, 작성자 정보, 업로드 날짜 등.
+
+® Recoil과 `useRecoilValueLoadable`
+> API 호출 상태(`loading`,`hasValue`,`hasError`)를 관리<br><br>
+> 데이터를 성공적으로 가져오면, 이를 기반으로 UI를 동적으로 렌더링
+
+® API 통신 실패 시 처리
+> API 호출 실패 시 에러를 출력하며 사용자에게 적절한 메시지를 표시<br><br>
+> 로딩 상태에서는 별도의 로딩 UI를 제공
+
+® UI 렌더링
+> 데이터를 기반으로 카드 UI를 생성하여 화면에 표시
+> 검색어 변경 또는 페이지 이동 시 API가 재호출되어 UI가 업데이트 됨
+
+
 
 ### 📑 Recoil
+#### <mark>📌 Recoil 검색 기능</mark>
+® 구조
+> `searchstate` : 검색어를 전역적으로 관리하는 상태<br><br>
+> `pageState` : 현재 페이지 번호를 관리하는 상태.<br><br>
+> `imageData` Selector: 검색어(searchState)와 페이지 번호(pageState)를 기반으로 API를 호출하여 데이터를 가져오는 로직.
+
+® 동작 흐름
+> `검색어 입력` : 사용자가 검색창에 입력한 검색어는 searchState에 저장되고, 입력값이 없을 경우 기본 검색어로 "Korea"가 설정<br><br>
+> `Recoil Selector로 API 호출` : `imageData` Selector는 `searchState`와 `pageState`를 기반으로 Unsplash API를 호출하고, API 호출 성공 시 데이터를 반환하고, 실패 시 에러를 처리<br><br>
+> `UI 업데이트` : `useRecoilValueLoadable`을 통해 API 호출 상태(loading, hasValue, hasError)를 관리하며, 데이터가 성공적으로 반환되면, 이를 기반으로 UI가 동적으로 렌더링
+
+#### <mark>📌 Recoil 검색 기능</mark>
+® 구조
+> <b>로컬 스토리지 </b>: 북마크 데이터를 브라우저의 `localStorage`에 저장.<br><br>
+> <b>Recoil 상태 관리</b>: `bookmarkState` 로 로컬 스토리지와 동기화하여 북마크 데이터를 관리.
+
+® 동작 흐름
+> `북마크 추가` : 사용자가 특정 이미지를 북마크하면, 해당 데이터가 로컬 스토리지와 `bookmarkState`에 저장되고, 중복 데이터가 저장되지 않도록 체크<br><br>
+> `북마크 삭제` : 사용자가 북마크를 제거하면, 해당 데이터가 로컬 스토리지와 bookmarkState에서 삭제됨<br><br>
+> `북마크 데이터 로드` : 컴포넌트가 로드될 때 `localStorage`에서 데이터를 가져와 `bookmarkState`에 저장하고, 상태가 초기화되지 않도록 로컬 스토리지 데이터를 동기화<br><br>
+> `북마크 목록 UI` : `bookmarkState`의 데이터를 기반으로 북마크된 이미지 리스트를 렌더링, 북마크된 데이터가 없을 경우, 기본 메시지를 출력
 
 ## 4. 결과
 
